@@ -1,0 +1,118 @@
+const navbar = document.getElementById('nav');
+const pageThreeHeading = document.getElementById('section-3-heading');
+const pageThreePara = document.getElementById('section-3-paragraph');
+const pageThreeLearnMore = document.getElementById('learn-more');
+const pageFourHeading = document.getElementById('section-4-heading');
+const pageFourBrandLogos = document.getElementById('brand-logos');
+
+let prevScrollPosition = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  const currScrollPosition = window.scrollY;
+
+  
+  //Navbar Animation
+  if (currScrollPosition < 300) {
+    navbar.style.top = '0';
+  }
+  else if (prevScrollPosition > currScrollPosition){
+    navbar.style.top = '0';
+
+  }
+  else{
+    navbar.style.top = `-${navbar.clientHeight}px`;
+  }
+
+  // Page3 Animations
+  if (currScrollPosition >= 800){
+  
+    pageThreeHeading.style.opacity = '100';
+    pageThreeHeading.style.transform = 'translateY(0px)';
+  }
+  if (currScrollPosition >=950){
+    pageThreePara.style.opacity = '100';
+    pageThreePara.style.transform = 'translateY(0px)';
+  }
+  if (currScrollPosition >=1300){
+    pageThreeLearnMore.style.opacity = '100';
+    pageThreeLearnMore.style.transform = 'translateY(0px)';
+  }
+
+  //Page4 Animations
+  if (currScrollPosition > 1600){
+    pageFourHeading.style.opacity = '100';
+    pageFourHeading.style.transform = 'translateY(0px)';
+  }
+  if(currScrollPosition >1800){
+    pageFourBrandLogos.style.opacity = '100';
+  }
+  prevScrollPosition = currScrollPosition;
+});
+
+//Cards Effects
+const sectionFiveCards = document.querySelectorAll(".section5-individual-card");
+
+sectionFiveCards.forEach((card)=>{
+  let backgroundImage = card.querySelector(".background-image");
+  let buttonOverlay = card.querySelector(".card-btn-overlay");
+  card.addEventListener('mouseenter', ()=>{
+    buttonOverlay.style.width = '100%';
+    backgroundImage.style.transform='scale(1.05)';
+  })
+  card.addEventListener('mouseleave', ()=>{
+    buttonOverlay.style.width = '0%';
+    backgroundImage.style.transform='scale(1)';
+  })
+})
+
+
+
+
+
+
+
+//Page one and two animations
+gsap.from("#middiv",{
+  opacity:0,
+  duration: 0.5,
+   
+})
+gsap.from("#img1",{
+  delay: 1,
+  opacity:0,
+  duration: 1,
+  y:100
+  
+  
+})
+gsap.from("#img2",{
+  delay: 1,
+  opacity:0,
+  duration: 1,
+  x:100
+  
+})
+
+gsap.from("#img3",{
+  delay: 1,
+  opacity:0,
+  duration: 1,
+  y:-100
+  
+})
+
+
+
+
+gsap.from("#section-2 h2, #section-2 h1, #section-2 #about-us",{
+  opacity: 0,
+  translateY: "50px",
+  stagger: 0.3,
+ 
+  scrollTrigger:{
+    trigger: "#section-2 h2",
+    scroller: "body",
+    start: "top 80%",
+    
+  }
+})
