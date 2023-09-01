@@ -4,12 +4,13 @@ const pageThreePara = document.getElementById('section-3-paragraph');
 const pageThreeLearnMore = document.getElementById('learn-more');
 const pageFourHeading = document.getElementById('section-4-heading');
 const pageFourBrandLogos = document.getElementById('brand-logos');
-
+const sectionFiveAllCards = document.getElementById("section5-cards");
+const sectionFiveSeeMore = document.getElementById("section5-seemore");
 let prevScrollPosition = window.scrollY;
 
 window.addEventListener("scroll", () => {
   const currScrollPosition = window.scrollY;
-
+  console.log(currScrollPosition);
   
   //Navbar Animation
   if (currScrollPosition < 300) {
@@ -23,7 +24,7 @@ window.addEventListener("scroll", () => {
     navbar.style.top = `-${navbar.clientHeight}px`;
   }
 
-  // Page3 Animations
+  // Section 3 Animations
   if (currScrollPosition >= 800){
   
     pageThreeHeading.style.opacity = '100';
@@ -38,13 +39,24 @@ window.addEventListener("scroll", () => {
     pageThreeLearnMore.style.transform = 'translateY(0px)';
   }
 
-  //Page4 Animations
+  //Section 4 Animations
+
   if (currScrollPosition > 1600){
     pageFourHeading.style.opacity = '100';
     pageFourHeading.style.transform = 'translateY(0px)';
   }
   if(currScrollPosition >1800){
     pageFourBrandLogos.style.opacity = '100';
+  }
+  prevScrollPosition = currScrollPosition;
+
+  //Section 5 Animations
+  if (currScrollPosition > 2300){
+    sectionFiveAllCards.style.opacity = '100';
+    sectionFiveAllCards.style.transform = 'translateY(0px)';
+  }
+  if(currScrollPosition >2500){
+    sectionFiveSeeMore.style.opacity = '100';
   }
   prevScrollPosition = currScrollPosition;
 });

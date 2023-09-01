@@ -510,6 +510,9 @@ html, body{
   gap: 40px;
   justify-content: center;
   display: flex;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 300ms ease-in, transform 400ms ease-in-out;
 }
 .section5-individual-card:before{
   width: 100%;
@@ -605,7 +608,9 @@ html, body{
 #section5-seemore{
   display: flex;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 5rem;  
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
 }
 #section5-seemore img{
   height: 50px;
