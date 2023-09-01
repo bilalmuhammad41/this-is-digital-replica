@@ -1,5 +1,5 @@
 # Replica of: [thisisdigital](https://thisisdigital.co.uk/)
-
+View Live: https://bilalmuhammad41.github.io/this-is-digital-replica/
 ![image](https://github.com/bilalmuhammad41/this-is-digital-replica/assets/122988632/93c9475e-0fb5-46e8-a715-5705f854f4e6)
 
 
