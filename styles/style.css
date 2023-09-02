@@ -654,3 +654,46 @@ html, body{
 #section5-seemore button:hover::after{
   width:100%;
 }
+
+#section6{
+  height: 100vh;
+  background-color: #00eb8f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* .carousel-container{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+} */
+.carousel-wrapper{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc(100%/2.1);
+  background-color: black;
+  height: clamp(30rem, 80vh, 30rem);
+  overflow: hidden;
+  width: 100vw;
+}
+.carousel-slide{
+  flex: 0, 0, 45rem;
+  cursor: pointer;
+  display: flex;
+  border: 2px solid red;
+  height: inherit;
+  width: clamp(45rem, 45rem, 50rem);
+  background-color: white;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-nav{
+  display: flex;
+  height: 3rem;
+  width: 4rem;
+  background-color: aliceblue;
+}

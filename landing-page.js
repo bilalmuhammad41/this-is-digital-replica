@@ -10,7 +10,7 @@ let prevScrollPosition = window.scrollY;
 
 window.addEventListener("scroll", () => {
   const currScrollPosition = window.scrollY;
-  console.log(currScrollPosition);
+  // console.log(currScrollPosition);
   
   //Navbar Animation
   if (currScrollPosition < 300) {
@@ -63,7 +63,6 @@ window.addEventListener("scroll", () => {
 
 //Cards Effects
 const sectionFiveCards = document.querySelectorAll(".section5-individual-card");
-
 sectionFiveCards.forEach((card)=>{
   let backgroundImage = card.querySelector(".background-image");
   let buttonOverlay = card.querySelector(".card-btn-overlay");
@@ -77,7 +76,25 @@ sectionFiveCards.forEach((card)=>{
   })
 })
 
+//Carousel Animation
 
+const carousel = document.querySelector('.carousel-wrapper');
+
+let isDragging = false;
+
+const startDrag = ()=>{
+  isDragging = true;
+};
+
+const dragging = (e)=>{
+  if (!isDragging){return};
+  carousel.scrollLeft = e.pageX;
+};
+const stopDrag = ()=>{isDragging = false};
+
+carousel.addEventListener('mousedown', startDrag);
+carousel.addEventListener('mousemove', dragging);
+carousel.addEventListener('mouseup', stopDrag);
 
 
 
