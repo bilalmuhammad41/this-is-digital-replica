@@ -80,6 +80,26 @@ sectionFiveCards.forEach((card)=>{
 
 const carousel = document.querySelector('.carousel-wrapper');
 const slide = document.querySelector('.carousel-slide');
+const circles = document.querySelectorAll('.circle');
+let currentIndex = 0;
+// let currentIndex = 1;
+function greyOut(){
+  circles.forEach((circle)=>{
+    circle.classList.remove('active');
+  });
+  
+}
+
+circles.forEach((circle, index) =>{
+  circle.addEventListener('click', ()=>{
+    greyOut();
+    circle.classList.add('active');
+    
+      carousel.scrollLeft = index*slide.offsetWidth;
+     
+   
+  });
+})
 
 let isDragging = false, startX, startScrollLeft;
 
@@ -89,6 +109,8 @@ const startDrag = (e)=>{
   startX = e.pageX;
   startScrollLeft = carousel.scrollLeft;
 };
+
+
 
 const dragging = (e)=>{
   if (!isDragging){return};
