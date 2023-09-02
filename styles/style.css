@@ -678,6 +678,11 @@ html, body{
   overflow: hidden;
   width: 100vw;
 }
+
+.dragging .carousel-slide{
+  cursor: grab;
+
+}
 .carousel-slide{
   flex: 0, 0, 45rem;
   cursor: pointer;

@@ -79,18 +79,27 @@ sectionFiveCards.forEach((card)=>{
 //Carousel Animation
 
 const carousel = document.querySelector('.carousel-wrapper');
+const slide = document.querySelector('.carousel-slide');
 
-let isDragging = false;
+let isDragging = false, startX, startScrollLeft;
 
-const startDrag = ()=>{
+const startDrag = (e)=>{
   isDragging = true;
+  carousel.classList.add('dragging');
+  startX = e.pageX;
+  startScrollLeft = carousel.scrollLeft;
 };
 
 const dragging = (e)=>{
   if (!isDragging){return};
-  carousel.scrollLeft = e.pageX;
+  
+  
+  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
 };
-const stopDrag = ()=>{isDragging = false};
+const stopDrag = ()=>{
+  isDragging = false
+  carousel.classList.remove('dragging');
+};
 
 carousel.addEventListener('mousedown', startDrag);
 carousel.addEventListener('mousemove', dragging);
