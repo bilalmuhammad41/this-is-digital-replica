@@ -7,7 +7,7 @@
 }
 html, body{
   width: 100vw;
-  min-height: 100vh;
+  /* min-height: 100vh;s */
   position: absolute;
 }
 
@@ -17,7 +17,7 @@ html, body{
 
 #main{
   display: block;
-  min-height: 100vh;
+  min-height: clamp(50rem, 100vh, 200rem);
   min-width: 50rem;
   position: relative;
   align-items: center;
@@ -26,8 +26,10 @@ html, body{
 
 #section-1{
   min-height: 100vh;
+  height:100%;
   min-width: 100vw;
   padding-block-end: 15rem;
+  position: relative;
 }
 
 #navright *{
@@ -320,7 +322,7 @@ html, body{
 #section-3{
   display: flex;
   position: relative;
-  height: clamp(1rem, 130vh, 65rem);
+  min-height: clamp(1rem, 130vh, 65rem);
   
 }
 #section-3-left{
@@ -454,7 +456,7 @@ html, body{
   padding: 50px 0px;
   flex-direction: column;
   align-items: center;
-  height: clamp(1rem, 130vh, 45rem);
+  min-height: clamp(1rem, 130vh, 45rem);
 }
 #section-4-heading{
   font-family: 'Cooper Lt Bt Light';
@@ -489,6 +491,7 @@ html, body{
   flex-wrap: wrap;
   justify-content: center;
   gap: clamp(6rem, 6vw, 15rem);
+  position: relative;
 
   opacity: 0;
   transition:opacity 500ms cubic-bezier(.39,.01,.55,.98);
@@ -500,13 +503,15 @@ html, body{
 #section5{
   display: flex;
   flex-direction: column;
-  height: clamp(1rem, 100vh, 65rem);
+  height: clamp(1rem, 100vh, 40rem);
   width: 100vw;
   padding-inline: 40px;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 #section5-cards{
+  position: relative;
   gap: 40px;
   justify-content: center;
   display: flex;
@@ -656,61 +661,118 @@ html, body{
 }
 
 #section6{
-  height: 100vh;
-  background-color: #00eb8f;
+  height:100vh;
+  max-height: 40rem;
+  /* background-color: #00eb8f; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
-
-/* .carousel-container{
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-} */
-.carousel-wrapper{
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: calc(100%/2.1);
-  background-color: black;
-  height: clamp(30rem, 80vh, 30rem);
-  overflow: hidden;
+.swiper {
   width: 100vw;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
+
 }
 
-.dragging .carousel-slide{
-  cursor: grab;
-
-}
-.carousel-slide{
-  flex: 0 0 45rem;
+.swiper-slide{
   cursor: pointer;
-  display: flex;
-  border: 2px solid red;
-  height: inherit;
-  width: clamp(45rem, 45rem, 50rem);
+  padding: 40px;
+  display:flex;
+  align-items: center;
+  text-align: center;
+  justify-content: end;
+  flex-direction: column;
   background-color: white;
-  user-select: none;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
-.carousel-nav{
-  display: flex;
-  height: 3rem;
-  width: 8rem;
-  background-color: aliceblue;
-  align-items: center;
-  justify-content: space-around;
+.slide-icon{
+  width: 25%;
+  height: 60px;
+  object-fit: contain;
+  top: 0;
 }
-
-.circle{
-  height: 1rem;
-  width: 1rem;
-  background-color: lightgray;
+.slide-review{
+  margin-top: 20px;
+  font-family: 'Cooper Lt Bt Light';
+  font-size: clamp(2rem, 3rem, 5rem);
+}
+.reviewer-position{
+  position: relative;
+ font-size: 1.125rem;
+ font-weight: 400;
+ letter-spacing: -0.7px;
+ margin: 40px 0 5px 0;
+}
+.reviewer-position::after{
+  content:'';
+  position: absolute;
+  left: -30px;
+  top: 3px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
+  background-color: #00eb8f;
 }
-.active{
-  background-color:#00eb8f;
+
+.slide-wrapper{
+  height:100%;
+  width:100%;
+  
+  display:flex;
+  align-items: center;
+  text-align: center;
+  justify-content: end;
+  flex-direction: column;
+  background-color: white;
+  position: relative;
+}
+.reviewer-name{
+  color: gray;
+  font-size: 1.13rem;
+}
+
+.swiper-pagination{
+ padding-bottom: 2rem;
+  position: absolute;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active{
+  background-color: #00eb8f;
+  
+}
+.swiper-pagination span{
+  height: 0.7rem;
+  width: 0.7rem;
+ 
+}
+@media screen and (max-width: 768px) {
+  #nav {
+    height: 4rem; /* Adjust as needed for smaller screens */
+    padding: 0 20px; /* Adjust as needed for smaller screens */
+  }
+
+  #navright {
+    gap: 2rem; /* Adjust as needed for smaller screens */
+  }
+
+  /* Add more responsive styles as needed */
+}
+
+/* Responsive styles for larger screens */
+@media screen and (min-width: 1200px) {
+  #nav {
+    height: 8rem; /* Adjust as needed for larger screens */
+    padding: 0 40px; /* Adjust as needed for larger screens */
+  }
+
+  #navright {
+    gap: 3.5rem; /* Adjust as needed for larger screens */
+  }
+
+  /* Add more responsive styles as needed */
 }

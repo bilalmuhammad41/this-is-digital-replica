@@ -6,6 +6,7 @@ const pageFourHeading = document.getElementById('section-4-heading');
 const pageFourBrandLogos = document.getElementById('brand-logos');
 const sectionFiveAllCards = document.getElementById("section5-cards");
 const sectionFiveSeeMore = document.getElementById("section5-seemore");
+const sectionSixSlides = document.querySelector('.swiper');
 let prevScrollPosition = window.scrollY;
 
 window.addEventListener("scroll", () => {
@@ -48,7 +49,7 @@ window.addEventListener("scroll", () => {
   if(currScrollPosition >1800){
     pageFourBrandLogos.style.opacity = '100';
   }
-  prevScrollPosition = currScrollPosition;
+ 
 
   //Section 5 Animations
   if (currScrollPosition > 2300){
@@ -57,6 +58,17 @@ window.addEventListener("scroll", () => {
   }
   if(currScrollPosition >2500){
     sectionFiveSeeMore.style.opacity = '100';
+  }
+  prevScrollPosition = currScrollPosition;
+
+  //Section 6 Animations
+  if (currScrollPosition > 2800){
+    sectionFiveAllCards.style.opacity = '100';
+    sectionFiveAllCards.style.transform = 'translateY(0px)';
+  }
+  if(currScrollPosition >3000){
+    sectionSixSlides.style.opacity = '100';
+    sectionSixSlides.style.transform = 'translateY(0px)';
   }
   prevScrollPosition = currScrollPosition;
 });
@@ -78,60 +90,91 @@ sectionFiveCards.forEach((card)=>{
 
 //Carousel Animation
 
-const carousel = document.querySelector('.carousel-wrapper');
-const slide = document.querySelector('.carousel-slide');
-const circles = document.querySelectorAll('.circle');
-let currentIndex = 0;
-// let currentIndex = 1;
-function greyOut(){
-  circles.forEach((circle)=>{
-    circle.classList.remove('active');
-  });
+// const carousel = document.querySelector('.carousel-wrapper');
+// const slide = document.querySelector('.carousel-slide');
+// const circles = document.querySelectorAll('.circle');
+// let currentIndex = 0;
+// // slide.style.transform = 'translate(50vw)'
+// // let currentIndex = 1;
+// function greyOut(){
+//   circles.forEach((circle)=>{
+//     circle.classList.remove('active');
+//   });
   
-}
+// }
 
-circles.forEach((circle, index) =>{
-  circle.addEventListener('click', ()=>{
-    greyOut();
-    circle.classList.add('active');
-    
-      carousel.scrollLeft = index*slide.offsetWidth;
-     
-   
-  });
-})
+// circles.forEach((circle, index) =>{
+//   circle.addEventListener('click', ()=>{
+//     greyOut();
+//     circle.classList.add('active');
+//       if(index > 0){carousel.scrollLeft = (index+1)*slide.offsetWidth;};
+//       if(index === 0){carousel.scrollLeft = (index)*slide.offsetWidth;};
+//   });
+// })
 
-let isDragging = false, startX, startScrollLeft;
+// let isDragging = false, startX, startScrollLeft;
 
-const startDrag = (e)=>{
-  isDragging = true;
-  carousel.classList.add('dragging');
-  startX = e.pageX;
-  startScrollLeft = carousel.scrollLeft;
-};
+// const startDrag = (e)=>{
+//   isDragging = true;
+//   carousel.classList.add('dragging');
+//   startX = e.pageX;
+//   startScrollLeft = carousel.scrollLeft;
+// };
 
 
 
-const dragging = (e)=>{
-  if (!isDragging){return};
+// const dragging = (e)=>{
+//   if (!isDragging){return};
   
   
-  carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-};
-const stopDrag = ()=>{
-  isDragging = false
-  carousel.classList.remove('dragging');
-};
+//   carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+// };
+// const stopDrag = ()=>{
+//   isDragging = false
+//   carousel.classList.remove('dragging');
+// };
 
-carousel.addEventListener('mousedown', startDrag);
-carousel.addEventListener('mousemove', dragging);
-carousel.addEventListener('mouseup', stopDrag);
+// carousel.addEventListener('mousedown', startDrag);
+// carousel.addEventListener('mousemove', dragging);
+// carousel.addEventListener('mouseup', stopDrag);
 
 
 
 
 
 //Page one and two animations
+
+//Carousel with SwipperJS
+
+const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  slidesPerView: 1,
+  initialSlide: 2,
+  breakpoints: {
+    // When window width is >= 768px
+    900: {
+       // Number of slides per view at this breakpoint
+      slidesPerView: 1.7,
+    }
+  },
+  // autoplay: {
+  //   delay: 3000,
+  // },
+
+  
+  centeredSlides: true,
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  }
+});
+
+
+
+
 gsap.from("#middiv",{
   opacity:0,
   duration: 0.5,
