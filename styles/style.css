@@ -878,6 +878,9 @@ html, body{
   display: flex;
   flex-direction: column;
   width: 30%;
+  opacity: 0;
+  transform: translateY(4rem);
+  transition: opacity 500ms ease-in-out, transform 650ms ease-in-out;
 }
 .footer-letstalk p {
   font-family: 'Cooper Lt Bt Light';
@@ -944,6 +947,9 @@ html, body{
 .footer-learn, .footer-explore, .footer-findus, .footer-partners{
   width: 12%;
   display: flex;
+  opacity: 0;
+  transform: translateY(4rem);
+  transition: opacity 500ms ease-in-out, transform 650ms ease-in-out;
   flex-direction: column;
 }
 .footer-learn h2, .footer-explore h2, .footer-findus h2{

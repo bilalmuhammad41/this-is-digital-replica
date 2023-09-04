@@ -1,14 +1,18 @@
-const navbar = document.getElementById('nav');
-const pageThreeHeading = document.getElementById('section-3-heading');
-const pageThreePara = document.getElementById('section-3-paragraph');
-const pageThreeLearnMore = document.getElementById('learn-more');
-const pageFourHeading = document.getElementById('section-4-heading');
-const pageFourBrandLogos = document.getElementById('brand-logos');
-const sectionFiveAllCards = document.getElementById("section5-cards");
-const sectionFiveSeeMore = document.getElementById("section5-seemore");
-const sectionSixSlides = document.querySelector('.swiper');
+const navbar = document.getElementById('nav')
+const pageThreeHeading = document.getElementById('section-3-heading')
+const pageThreePara = document.getElementById('section-3-paragraph')
+const pageThreeLearnMore = document.getElementById('learn-more')
+const pageFourHeading = document.getElementById('section-4-heading')
+const pageFourBrandLogos = document.getElementById('brand-logos')
+const sectionFiveAllCards = document.getElementById("section5-cards")
+const sectionFiveSeeMore = document.getElementById("section5-seemore")
+const sectionSixSlides = document.querySelector('.swiper')
 const sectionSevenCard = document.querySelector('.contact-details')
-console.log(sectionSevenCard);
+const footerLetsTalk = document.querySelector('.footer-letstalk')
+const footerLearn = document.querySelector('.footer-learn')
+const footerExplore = document.querySelector('.footer-explore')
+const footerFindus = document.querySelector('.footer-findus')
+const footerPartners = document.querySelector('.footer-partners')
 let prevScrollPosition = window.scrollY;
 
 window.addEventListener("scroll", () => {
@@ -73,12 +77,50 @@ window.addEventListener("scroll", () => {
     sectionSixSlides.style.transform = 'translateY(0px)';
   }
 
+
+  //Section 7 Animations
+
   if(currScrollPosition > 3400){
     sectionSevenCard.style.transform = 'translateY(-12rem)'
   }
 
+
+  if (currScrollPosition >3600){
+      animateFooterNav(elements);
+
+
+
+  }
   prevScrollPosition = currScrollPosition;
 });
+
+//Footer Nav Animations
+const elements = [footerLetsTalk, footerLearn, footerExplore, footerFindus, footerPartners]
+// console.log(elements[1].style);
+
+// function animateFooterNav(elements){
+  
+//   for(let index = 0;index <= elements.length-1; index+=1){
+//     setInterval((elements)=>{
+//           console.log(elements[index])
+//           elements[index].style.transform = 'translateY(0)';
+//           elements[index].style.opacity = '1'
+//         }, 1000);
+//   }
+// }
+
+function animateFooterNav(elements) {
+  for (let index = 0; index < elements.length; index++) {
+    // Use an IIFE (Immediately Invoked Function Expression) to capture the current index.
+    (function (currentIndex) {
+      setInterval(function () {
+        console.log(elements[currentIndex]);
+        elements[currentIndex].style.transform = 'translateY(0)';
+        elements[currentIndex].style.opacity = '1';
+      }, 300 * currentIndex); // Delay each animation by 'currentIndex' seconds.
+    })(index);
+  }
+}
 
 //Cards Effects
 const sectionFiveCards = document.querySelectorAll(".section5-individual-card");
