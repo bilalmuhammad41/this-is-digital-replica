@@ -750,6 +750,324 @@ html, body{
   width: 0.7rem;
  
 }
+
+.section7{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rem;
+  min-height: 100vh;
+  height: 100%;
+  background-color: black;
+  
+}
+
+.contact-details{
+  display: flex;
+  width: clamp(10rem, 58rem, 100rem);
+  height: 22rem;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 400ms cubic-bezier(.39,.01,.55,.98);
+}
+#contact-details-background-image{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  
+}
+.contact-details::after{
+  content: '';
+  opacity: 0.5;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  left:0;
+  position: absolute;
+  
+}
+#contact-details-para{
+  font-family: 'Cooper Lt Bt Light';
+  font-size: 1.9rem;
+  color: white;
+  width: 80%;
+  top:20%;
+  z-index: 1;
+  position: absolute;
+} 
+#contact-details-para span{
+  font-family: 'Cooper Lt Bt Light';
+  position: relative;
+}
+#contact-details-para span::after{
+  content: '';
+  width: 105%;
+  height: 0.6rem;
+  position: absolute;
+  bottom: -5px;
+  left:0;
+  background-image: url(https://thisisdigital.co.uk/dist/images/underline-green.svg);
+}
+.section7-request-callback{
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 7rem; */
+  bottom: 20%; 
+  opacity: 1;
+  transition: opacity 400ms ease-in-out;
+  z-index: 3;
+}
+
+.section7-request-callback img{
+  height: 50px;
+  width: 50px;
+  background-color: rgb(221, 237, 241);
+  border-radius: 50%; 
+}
+.section7-request-callback p{
+  color: white;
+  font-size: 23px;
+  letter-spacing: -1px;
+  margin-inline: 10px; 
+}
+.section7-request-callback button{
+  cursor: pointer;
+  height: 2.5rem;
+  font-size: 16px;
+  width: 15rem;
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 30px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: width 400ms ease-in-out; 
+}
+.section7-request-callback button i{
+  margin-left: 8px;
+}
+.section7-request-callback button::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background-color: #00eb8f;
+  top: 0;
+  left:0;
+  z-index: -1;
+  transition: width 400ms ease-in-out;  
+}
+.section7-request-callback button:hover::after{
+  width:100%;
+}
+
+.footer-nav{
+  display: flex;
+  justify-content: space-around;
+  margin: 0 6rem;
+}
+.footer-letstalk{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+.footer-letstalk p {
+  font-family: 'Cooper Lt Bt Light';
+  color: white;
+  font-size: 3rem;
+}
+.footer-letstalk p span{
+  font-family: inherit;
+  position: relative;
+}
+.footer-letstalk p span::after{
+  position: absolute;
+  content:'';
+  width: 120%;
+  height: 120%;
+  top:-5px;
+  left: -18px;
+  background-image: url(https://thisisdigital.co.uk/dist/images/circle-green.svg);
+}
+.letstalk-btn{
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.letstalk-btn button{
+  cursor: pointer;
+  height: 2.2rem;
+  font-size: 16px;
+  width: 5rem;
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+  border: 1px solid rgb(205, 205, 205);
+  border-radius: 30px;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: width 400ms ease-in-out; 
+}
+.letstalk-btn button i{
+  z-index: 1;
+  position: relative;
+}
+.letstalk-btn button::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background-color: #00eb8f;
+  top: 0;
+  left:0;
+  z-index: 0;
+  transition: width 400ms ease-in-out;  
+}
+.letstalk-btn button:hover::after{
+  width:100%;
+}
+
+.letstalk-btn p{
+  font-family: 'Inter';
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.footer-learn, .footer-explore, .footer-findus, .footer-partners{
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+}
+.footer-learn h2, .footer-explore h2, .footer-findus h2{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+.footer-learn a, .footer-explore a, .footer-findus p{
+  text-decoration: none;
+  color: lightgray;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 2rem;
+  position: relative;
+ 
+}
+.footer-learn a::after, .footer-explore a::after{
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #00eb8f;
+  z-index: 1;
+  transition: width 200ms ease-in-out;
+}
+.footer-learn a:hover::after, .footer-explore a:hover::after{
+  width: 55%;
+
+}
+.footer-partners img{
+  width: 75%;
+  margin-top: 1.5rem;
+}
+
+.license-info{
+  display: flex;
+  height: 5rem ;
+  margin-top: 4rem;
+  border-top: 1px solid rgb(146, 146, 146);
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+}
+.footer-logo{
+  font-family: 'Cooper Lt Bt Light';
+  font-size: 1.5rem;
+  color: white;
+}
+.footer-logo span{
+  font-family: inherit;
+  color: #00eb8f;
+}
+
+.license-info a{
+  color: lightgray;
+  text-decoration: none;
+}
+.license-info a{
+  font-size: 0.8rem;
+}
+#copyright {
+  margin-left: 10rem;
+  color: lightgray;
+}
+.footer-bottom-text{
+  font-size: 0.8rem;
+  color: lightgray;
+}
+.footer-bottom-text a{
+  position: relative;
+  margin-left: 5px;
+}
+.footer-bottom-text a::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background-color: #00eb8f;
+  z-index: 1;
+  transition: font-weight 300ms ease-in-out, color 300ms ease-in-out;
+}
+.footer-bottom-text a:hover{
+  font-weight: 500;
+  color: white;
+}
+
+.footer-social-links{
+  display: flex;
+  width: 4rem;
+  align-items: center;
+  justify-content: space-around;
+}
+.footer-social-links a i{
+  font-size: 1rem;
+}
+
+.footer-social-links a{
+  transition: color 300ms ease-in-out;
+  position: relative;
+}
+.footer-social-links a:hover{
+  color: white;
+}
+.footer-social-links a:hover::after{
+  width: 100%
+}
+.footer-social-links a::after{
+  position: absolute;
+  content: '';
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -3px;
+  background-color: #00eb8f;
+  z-index: 1;
+  transition: width 200ms ease-in-out;
+}
+
 @media screen and (max-width: 768px) {
   #nav {
     height: 4rem; /* Adjust as needed for smaller screens */
@@ -776,3 +1094,4 @@ html, body{
 
   /* Add more responsive styles as needed */
 }
+

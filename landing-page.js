@@ -7,6 +7,8 @@ const pageFourBrandLogos = document.getElementById('brand-logos');
 const sectionFiveAllCards = document.getElementById("section5-cards");
 const sectionFiveSeeMore = document.getElementById("section5-seemore");
 const sectionSixSlides = document.querySelector('.swiper');
+const sectionSevenCard = document.querySelector('.contact-details')
+console.log(sectionSevenCard);
 let prevScrollPosition = window.scrollY;
 
 window.addEventListener("scroll", () => {
@@ -70,6 +72,11 @@ window.addEventListener("scroll", () => {
     sectionSixSlides.style.opacity = '100';
     sectionSixSlides.style.transform = 'translateY(0px)';
   }
+
+  if(currScrollPosition > 3400){
+    sectionSevenCard.style.transform = 'translateY(-12rem)'
+  }
+
   prevScrollPosition = currScrollPosition;
 });
 
