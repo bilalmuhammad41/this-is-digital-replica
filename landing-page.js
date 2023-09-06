@@ -1,4 +1,4 @@
-const navbar = document.getElementById('nav')
+const navbar = document.querySelector('.nav')
 const pageThreeHeading = document.getElementById('section-3-heading')
 const pageThreePara = document.getElementById('section-3-paragraph')
 const pageThreeLearnMore = document.getElementById('learn-more')
@@ -114,7 +114,7 @@ function animateFooterNav(elements) {
     // Use an IIFE (Immediately Invoked Function Expression) to capture the current index.
     (function (currentIndex) {
       setInterval(function () {
-        console.log(elements[currentIndex]);
+        // console.log(elements[currentIndex]);
         elements[currentIndex].style.transform = 'translateY(0)';
         elements[currentIndex].style.opacity = '1';
       }, 300 * currentIndex); // Delay each animation by 'currentIndex' seconds.
@@ -186,7 +186,6 @@ sectionFiveCards.forEach((card)=>{
 // carousel.addEventListener('mousedown', startDrag);
 // carousel.addEventListener('mousemove', dragging);
 // carousel.addEventListener('mouseup', stopDrag);
-
 
 
 

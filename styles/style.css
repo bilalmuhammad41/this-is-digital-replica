@@ -7,44 +7,31 @@
 }
 html, body{
   width: 100vw;
-  /* min-height: 100vh;s */
-  position: absolute;
+  height: 100vh;
 }
 
 ::-webkit-scrollbar{
   display: none;
 }
 
-#main{
+.main{
   display: block;
   min-height: clamp(50rem, 100vh, 200rem);
-  min-width: 50rem;
   position: relative;
   align-items: center;
   justify-content: center;
 }
 
-#section-1{
-  min-height: 100vh;
-  height:100%;
-  min-width: 100vw;
-  padding-block-end: 15rem;
-  position: relative;
-}
 
-#navright *{
-  font-family: 'Inter';
-  color: black;
-}
-#nav{
+.nav{
   display: flex;
-  background-color: white;
-  height: 6rem;
-  align-items: center;justify-content: space-between;
   position: fixed;
-  top:0;
-  padding: 0 30px 0 30px;  
+  background-color: white;
   width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+  top:0;
+  padding: 2rem 3rem ;  
   transition: top 0.3s ease-in-out;
   z-index:11;
 }
@@ -53,11 +40,14 @@ html, body{
   color: #00eb8f;
   font-weight: 900;
 }
-#nav h1{
+#navright *{
+  font-family: 'Inter';
+  color: black;
+}
+.nav h1{
   left:0;
   font-family: "Cooper Lt BT Light";
   font-weight: 100;
- 
 }
 #navright{
   right:0;
@@ -122,12 +112,17 @@ html, body{
 #navright button:hover::after{
   width: 100%;
 }
+#section-1{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  padding: 2em 0;
+  position: relative;
+}
 
 #middiv{
   width: 100vw;
-  height: 100vh;
   display: flex;
-  position: absolute;
   flex-direction: column;
   text-align: center;
   align-items: center;
@@ -155,11 +150,13 @@ html, body{
 }
 #middiv p{
 
-  font-size: max(1.5rem, 0.5rem);
+  font-size: clamp(0.7rem, 1rem, 2rem);
   font-weight: 500;
   margin-top: 3.5rem;
   z-index: 10;
+  position: relative;
 }
+
 .arrow-btn{
   cursor: pointer;
   height: 2rem;
@@ -245,9 +242,20 @@ html, body{
 }
 #section-2 h1{
   width: 60%;
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 40vw,2.8rem);
   font-weight: 400;
   line-height: 3.5rem;
+}
+#section-2 h1::before{
+  content: '';
+  position: absolute;
+  left:-20px;
+  top:0;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 100px;
+  background-color: #00eb8f;
+
 }
 .about-us-btn{
   cursor: pointer;
@@ -301,21 +309,6 @@ html, body{
   left: -10px;
   
   
-}
-#section-2-dot{
-  display: inline-block;
-  height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  position: relative;
-  background-color: #00eb8f;
-  margin-right: 10px;
-}
-
-#section-2-dot::after{
-  position: absolute;
-  left: 0;
-  top: 10px;
 }
 
 
@@ -1074,30 +1067,29 @@ html, body{
   transition: width 200ms ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
-  #nav {
-    height: 4rem; /* Adjust as needed for smaller screens */
-    padding: 0 20px; /* Adjust as needed for smaller screens */
+@media (max-width: 768px) {
+  html, body{
+    width: 100vw;
+  }
+  .main{
+    width: 100%;
+  }
+  .nav {
+    padding: 3rem 4rem;
+    width: 100%;
+  }
+  #navright{
+    gap: 1.5rem;
   }
 
-  #navright {
-    gap: 2rem; /* Adjust as needed for smaller screens */
-  }
-
-  /* Add more responsive styles as needed */
+ #section-1{
+  width: 100vw;
+ }
 }
 
 /* Responsive styles for larger screens */
-@media screen and (min-width: 1200px) {
-  #nav {
-    height: 8rem; /* Adjust as needed for larger screens */
-    padding: 0 40px; /* Adjust as needed for larger screens */
-  }
-
-  #navright {
-    gap: 3.5rem; /* Adjust as needed for larger screens */
-  }
-
-  /* Add more responsive styles as needed */
+@media screen and (max-width: 1200px) {
+ 
+  
 }
 
