@@ -132,7 +132,7 @@ window.addEventListener("scroll", () => {
   if(currScrollPosition > 4200){
     sectionSevenCard.style.transform = 'translateY(-50%)'
   }
-  if (currScrollPosition >4600){
+  if (currScrollPosition >4300){
       animateFooterNav(elements);
   }
   prevScrollPosition = currScrollPosition;

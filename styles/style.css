@@ -1240,7 +1240,10 @@ menu{
     padding-block:2rem;
     flex-direction: column;
     align-items: start;
-    gap: 0.5rem;
+    gap: 0.9rem;
+  }
+  .footer-bottom-text, .footer-bottom-text a, .footer-bottom-text p{
+    font-size: clamp(0.7rem, 2vw, 1rem);
   }
   .footer-social-links{
     gap:0.5rem;
