@@ -1,84 +1,99 @@
+:root{
+  --ff-md: 2rem;
+}
 *{
   margin:0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Inter';
+  text-decoration: none;
+  list-style: none;
 }
-html, body{
-  width: 100vw;
-  height: 100vh;
-}
-
 ::-webkit-scrollbar{
   display: none;
 }
 
-.main{
-  display: block;
-  min-height: clamp(50rem, 100vh, 200rem);
-  position: relative;
-  align-items: center;
-  justify-content: center;
-}
-
-
 .nav{
-  display: flex;
+  display: none;
   position: fixed;
   background-color: white;
-  width: 100vw;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   top:0;
-  padding: 2rem 3rem ;  
-  transition: top 0.3s ease-in-out;
+  padding: 2rem 2rem ;  
+  transition: top 0.3s cubic-bezier(.25,1.08,.68,.98);
   z-index:11;
 }
-
-#dot{
-  color: #00eb8f;
-  font-weight: 900;
+.logo{
+  position: relative;
+  left:0;
+  display: flex;
+  flex-wrap: nowrap;
+  font-family: "Cooper Lt BT Light";
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2vw, 2rem);
 }
-#navright *{
-  font-family: 'Inter';
+menu{
+  display: none;
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  top:0;
+  padding: 2rem 2rem ;  
+  transition: top 0.3s cubic-bezier(.25,1.08,.68,.98);
+  z-index:11;
+}
+.dot{
+  position: absolute;
+  background-color: #00eb8f;
+  width: 8px;
+  right: -15px;
+  bottom: 5px;
+  height: 8px;
+  border-radius: 100px;
+}
+
+.navitems{
+  
+  display: flex;
+  flex: 1;
+  margin-right: 3rem;
+  gap: clamp(1rem, 4vw, 3.5rem);
+}
+.navitem a{
   color: black;
 }
-.nav h1{
-  left:0;
-  font-family: "Cooper Lt BT Light";
-  font-weight: 100;
-}
+
 #navright{
+  display: flex;
   right:0;
   display: flex;
   align-items: center;
-  gap: 3.5rem;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
-#navright a{
-  text-decoration: none;
+.navitem{
   font-size: 1rem;
   position: relative;
-  transition: font-weight 200ms ease-in-out, transform 300ms ease-in-out;
+  transition: transform 300ms cubic-bezier(.25,1.08,.68,.98);
 }
-#navright a:hover{
-  transform: scale(1.1);
-  font-weight: 500;
-}
-#navright a:after{
+
+.navitem:after{
   content: '';
   position: absolute;
   left: 0;
-  bottom:-5px;
+  bottom:-4px;
   width: 100%;
-  height: 4px;
+  height: 2px;
   transform: scaleX(0);
   background-color: #00eb8f;
   transform-origin: right;
-  transition: transform 250ms ease-in-out;
+  transition: transform 250ms cubic-bezier(.25,1.08,.68,.98);
   transition-delay: 0.1s;
 }
-#navright a:hover::after{
+.navitem:hover::after{
   transform: scaleX(1);
   transform-origin: left ;
 }
@@ -106,39 +121,63 @@ html, body{
   top: 0;
   left:0;
   z-index: -1;
-  transition: width 300ms ease-in-out;
+  transition: width 600ms cubic-bezier(.25,1.08,.68,.98);
 }
 #navright button:hover::after{
   width: 100%;
 }
 #section-1{
   display: flex;
+  position: relative;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   padding: 2em 0;
-  position: relative;
+ 
+}
+#section-1 img{
+  transition: margin 0.4s ease-in-out;
+  margin: 2rem 
 }
 
-#middiv{
+.middiv{
+  position: absolute;
   width: 100vw;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
   justify-content: center;
-  
 }
 
-#middiv h1{
+#img1{
+  position: absolute;
+  height: clamp(35vw, 30rem, 25rem);
+  left: 6vw;
+  top: auto;
+}
+#img2{
+  position: absolute;
+  height: clamp(13vw, 10rem, 10rem);
+  right: 12%;
+  top: 10%;
+}
+#img3{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: clamp(15vw, 15rem, 15rem);
+}
+
+.middiv h1{
   font-family: "Cooper Lt BT Light";
   font-size: max(4.9vw, 2rem);
   font-weight: 100;
-  margin-top: 3rem;
   width: 50vw;
   position: relative;
   z-index: 10;
 }
-#middiv h1::after{
+.middiv h1::after{
   content: '';
   background-image: url(https://thisisdigital.co.uk/dist/images/underline-green.svg);
   left:30%;
@@ -147,9 +186,8 @@ html, body{
   height: 15px;
   position: absolute;
 }
-#middiv p{
-
-  font-size: clamp(0.7rem, 1.5rem, 2rem);
+.middiv p{
+  font-size: clamp(1.3vw, 1.5rem, 1rem);
   font-weight: 500;
   margin-top: 3.5rem;
   z-index: 10;
@@ -164,6 +202,7 @@ html, body{
   border-radius: 30px;
   background-color: transparent;
   position: relative;
+  margin-left: 0.5rem;
   overflow: hidden;
 }
 .arrow-btn::after{
@@ -182,40 +221,12 @@ html, body{
   width: 100%;
 }
 
-#img1{
-  height: clamp(35vw, 25rem, 10rem);
-  top: min(10rem, 15vh);
-  position: absolute;
-  left: max(5vw, 5rem);
-
-}
-#img2{
-  position: absolute;
-  height: max(10vw, 15vw);
-  right: 19vw;
-  top: max(11vh, 8rem);
-}
-#img3{
-  position: absolute;
-  top: 55vh;
-  right: 10vw;
-  height: 18vw;
-}
-
-#section-1 img{
-  transition: margin 0.4s ease-in-out;
-}
-
-#section-1 img:hover{
-  margin-top: -8px;
-}
-
 #section-2{
   display: flex;
   flex-direction: column;
-  height: min(70vh, 30rem);
-  width: 100vw;
-  padding-block: 15rem; 
+  width: 100%;
+  padding-block: clamp(5rem, 5vw,8rem);
+  padding-inline: 3rem; 
   gap: 2rem;
   background-color: rgb(0, 0, 0);
   text-align: center;
@@ -234,28 +245,25 @@ html, body{
   font-weight: 500;
 
 }
+#section-2 .dot{
+  left:-4%;
+  top: 0.2vw;
+  width: clamp(0.5rem, 0.7vw, 1rem);
+  height: clamp(0.5rem, 0.7vw, 1rem);
+}
 #section-2 h2{
   font-family: 'Inter';
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: clamp(0.8rem, 0.9vw, 1.5rem);
 }
 #section-2 h1{
-  width: 60%;
-  font-size: clamp(2rem, 40vw,2.8rem);
+  max-width: 55rem;
+  
+  font-size: clamp(1.5rem, 2.3vw, 3rem);
   font-weight: 400;
-  line-height: 3.5rem;
+  line-height: clamp(2rem, 3vw, 5rem);
 }
-#section-2 h1::before{
-  content: '';
-  position: absolute;
-  left: 0px;
-  top: 0.4em;
-  width: 0.4em;
-  height: 0.4em;
-  border-radius: 100px;
-  background-color: #00eb8f;
 
-}
 .about-us-btn{
   cursor: pointer;
   height: 2rem;
@@ -282,9 +290,12 @@ html, body{
 #about-us{
   display: flex;
   gap: 15px;
+  font-size: clamp(0.8rem, 1.3vw, 2rem);
   margin-top: 30px;
-  align-items: center;
-  
+  align-items: center; 
+}
+#about-us a{
+  font-size: clamp(1.3vw, 1.5rem, 1rem);
 }
 .about-us-btn:hover::after{
   width: 100%;
@@ -312,20 +323,19 @@ html, body{
 #section-3{
   display: flex;
   position: relative;
-  min-height: clamp(1rem, 130vh, 65rem);
+  padding-block: 4rem;
   
 }
 #section-3-left{
   width: 55vw;
   display: flex;
   gap:31px;
-  /* background-color: #00eb8f; */
 }
 #section-3-left-left{
   display: flex;
   flex-direction: column;
   position: relative;
-  width: clamp(1rem, 23vh, 12rem);
+  width: clamp(1rem, 15vw, 12rem);
   gap: 31px;
   
 }
@@ -352,13 +362,12 @@ html, body{
   width: 50vw;
   gap: 20px;
   padding-left: 20px;
-  /* background-color:yellowgreen; */
 }
 
 #section-3-heading{
   font-family: 'Cooper Lt BT Light';
   font-weight: 100;
-  font-size: clamp(1rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   width: 38vw;
   opacity: 0;
   transform: translateY(100px);
@@ -392,7 +401,7 @@ html, body{
 }
 #learn-more p{
   
-  font-size: 23px;
+  font-size: clamp(1rem, 1.3vw, 2rem);
   letter-spacing: -1px;
   margin-inline: 10px;
   
@@ -446,7 +455,6 @@ html, body{
   padding: 50px 0px;
   flex-direction: column;
   align-items: center;
-  min-height: clamp(1rem, 130vh, 45rem);
 }
 #section-4-heading{
   font-family: 'Cooper Lt Bt Light';
@@ -475,26 +483,25 @@ html, body{
 }
 #brand-logos{  
   display: flex;
-  width: clamp( 50rem, 80rem, 80rem);
+  width: 100%;
   padding-inline:clamp(1rem, 2rem, 6rem);
   padding-block: 100px;
   flex-wrap: wrap;
   justify-content: center;
-  gap: clamp(6rem, 6vw, 15rem);
+  gap: clamp(4rem, 6vw, 15rem);
   position: relative;
 
   opacity: 0;
   transition:opacity 500ms cubic-bezier(.39,.01,.55,.98);
 }
 #brand-logos img{
-  width:11%;
+  width:clamp(4rem, 30vw, 9rem);
 }
 
 #section5{
   display: flex;
   flex-direction: column;
-  height: clamp(1rem, 100vh, 40rem);
-  width: 100vw;
+  width: 100%;
   padding-inline: 40px;
   align-items: center;
   justify-content: center;
@@ -515,12 +522,14 @@ html, body{
   background-color: #00eb8f;
 }
 .section5-individual-card{
-  width: 35em;
+  width: clamp(5rem, 45vw, 40rem);
+  height: clamp(15rem, 30vw, 25rem);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 25em;
-  padding: 2rem 2.5rem;
+ 
+  padding-block: clamp(1rem, 2vw, 2rem);
+  padding-inline: clamp(1rem, 2vw, 2.5rem);
   position: relative;
   overflow: hidden;
   cursor: pointer;
@@ -533,37 +542,37 @@ html, body{
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, black, white); /* Linear gradient */
+  background: linear-gradient(to top, black, white); 
   z-index: -2;
 }
 .card-logo{
-  width: 9em;
+  width: clamp(1rem, 25vw, 9rem);
   margin-top: 1rem;
   object-fit: cover;
-  top: 1.2rem;
+  top: clamp(1rem, 1vw,1.2rem);
 }
 
 .section5-individual-card h1{
   font-family: 'Cooper Lt Bt Light';
   color: white;
-  font-size: 2.3rem;
+  font-size: clamp(1.125rem, 2vw, 2.3rem);
   font-weight: 100;
 }
 #case-study{
   display: flex;
   color: white;
   align-items: center;
-  letter-spacing: -2px;
+  letter-spacing: clamp(-1px, 1vw, -2px);
   font-weight: 500;
   gap: 10px;
   margin: 10px 0px 0px 0px;
-  font-size: 1.5rem;
+  font-size: clamp(0.8rem, 2vw, 1.5rem);
 }
 #card-arrow-btn{
   cursor: pointer;
-  height: 2.2rem;
+  height: clamp(1.8rem, 2vw,2.2rem);
   font-size: 16px;
-  width: 4.5rem;
+  width: clamp(3.5rem, 5vw, 4.5rem);
   color: rgb(255, 255, 255);
   margin-left: 10px;
   border: 1px solid rgb(200, 200, 200);
@@ -608,13 +617,13 @@ html, body{
   transition: opacity 400ms ease-in-out;
 }
 #section5-seemore img{
-  height: 50px;
+  height: clamp(2.5rem, 1.4vw, 50px);
   background-color: rgb(221, 237, 241);
   border-radius: 50%; 
 }
 #section5-seemore p{
   
-  font-size: 23px;
+  font-size: clamp(1rem, 1.3vw, 2rem);
   letter-spacing: -1px;
   margin-inline: 10px; 
 }
@@ -651,9 +660,7 @@ html, body{
 }
 
 #section6{
-  height:100vh;
-  max-height: 40rem;
-  /* background-color: #00eb8f; */
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -661,7 +668,7 @@ html, body{
   position: relative;
 }
 .swiper {
-  width: 100vw;
+  width: 100%;
   opacity: 0;
   transform: translateY(100px);
   transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
@@ -689,7 +696,7 @@ html, body{
 .slide-review{
   margin-top: 20px;
   font-family: 'Cooper Lt Bt Light';
-  font-size: clamp(2rem, 3rem, 5rem);
+  font-size: clamp(2rem, 2.5vw, 3rem);
 }
 .reviewer-position{
   position: relative;
@@ -745,17 +752,15 @@ html, body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20rem;
-  min-height: 100vh;
-  height: 100%;
+  margin-top: 5rem;
   background-color: black;
   
 }
 
 .contact-details{
   display: flex;
-  width: clamp(10rem, 58rem, 100rem);
-  height: 22rem;
+  width: clamp(10rem, 60vw, 80rem);
+  height: clamp(10rem, 30vw, 25rem);
   position: relative;
   flex-direction: column;
   justify-content: center;
@@ -783,7 +788,7 @@ html, body{
 }
 #contact-details-para{
   font-family: 'Cooper Lt Bt Light';
-  font-size: 1.9rem;
+  font-size: clamp(1rem, 2.5vw, 1.9rem);
   color: white;
   width: 80%;
   top:20%;
@@ -808,8 +813,7 @@ html, body{
   position: absolute;
   align-items: center;
   justify-content: center;
-  /* margin-top: 7rem; */
-  bottom: 20%; 
+  margin-top: clamp(5rem, 10vw, 10rem); 
   opacity: 1;
   transition: opacity 400ms ease-in-out;
   z-index: 3;
@@ -823,7 +827,7 @@ html, body{
 }
 .section7-request-callback p{
   color: white;
-  font-size: 23px;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   letter-spacing: -1px;
   margin-inline: 10px; 
 }
@@ -831,7 +835,7 @@ html, body{
   cursor: pointer;
   height: 2.5rem;
   font-size: 16px;
-  width: 15rem;
+  width: clamp(8rem, 20vw,15rem);
   color: rgb(255, 255, 255);
   margin-left: 10px;
   border: 1px solid rgb(205, 205, 205);
@@ -858,11 +862,15 @@ html, body{
 .section7-request-callback button:hover::after{
   width:100%;
 }
-
+.footer-items{
+  width:100%;
+  display: flex;
+  padding-inline: 5rem;
+}
 .footer-nav{
   display: flex;
   justify-content: space-around;
-  margin: 0 6rem;
+
 }
 .footer-letstalk{
   display: flex;
@@ -875,7 +883,7 @@ html, body{
 .footer-letstalk p {
   font-family: 'Cooper Lt Bt Light';
   color: white;
-  font-size: 3rem;
+  font-size: clamp(1rem, 3vw, 3rem);
 }
 .footer-letstalk p span{
   font-family: inherit;
@@ -931,28 +939,43 @@ html, body{
 
 .letstalk-btn p{
   font-family: 'Inter';
-  font-size: 1.5rem;
+  font-size:  clamp(1rem, 1.3vw, 2rem);
   font-weight: 500;
 }
 .footer-learn, .footer-explore, .footer-findus, .footer-partners{
-  width: 12%;
+  width: clamp(5rem, 13vw, 20rem);
   display: flex;
   opacity: 0;
   transform: translateY(4rem);
   transition: opacity 500ms ease-in-out, transform 650ms ease-in-out;
   flex-direction: column;
 }
+.footer-partners-horizontal{
+  width: 80%;
+  display: none;
+  opacity: 0;
+  align-items: start;
+  justify-content: space-between;
+  
+  transform: translateY(4rem);
+  transition: opacity 500ms ease-in-out, transform 650ms ease-in-out;
+}
+.footer-partners-horizontal img{
+  width: clamp(5rem, 5vw, 4rem);
+  margin-top: 1.5rem;
+
+}
 .footer-learn h2, .footer-explore h2, .footer-findus h2{
   text-decoration: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw,1.5rem);
   font-weight: 500;
   margin-bottom: 1.5rem;
 }
 .footer-learn a, .footer-explore a, .footer-findus p{
   text-decoration: none;
   color: lightgray;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
   font-weight: 400;
   line-height: 2rem;
   position: relative;
@@ -974,22 +997,30 @@ html, body{
 
 }
 .footer-partners img{
-  width: 75%;
+  width: clamp(5rem, 5vw, 4rem);
   margin-top: 1.5rem;
+  align-self: center;
 }
 
 .license-info{
   display: flex;
-  height: 5rem ;
+  
   margin-top: 4rem;
   border-top: 1px solid rgb(146, 146, 146);
   justify-content: space-between;
   width: 80%;
   align-items: center;
 }
+.footer-bottom-right{
+  display: flex;
+  align-items: end;
+  gap: clamp(2rem, 3vw, 3rem)
+}
 .footer-logo{
+  width: 10rem;
   font-family: 'Cooper Lt Bt Light';
-  font-size: 1.5rem;
+  flex-wrap: nowrap;
+  font-size: clamp(1rem,2vw, 1.5rem);
   color: white;
 }
 .footer-logo span{
@@ -1005,16 +1036,15 @@ html, body{
   font-size: 0.8rem;
 }
 #copyright {
-  margin-left: 10rem;
+ 
   color: lightgray;
 }
 .footer-bottom-text{
-  font-size: 0.8rem;
+  font-size: clamp(0.8rem, 2vw, 0.8rem);
   color: lightgray;
 }
 .footer-bottom-text a{
   position: relative;
-  margin-left: 5px;
 }
 .footer-bottom-text a::after{
   position: absolute;
@@ -1062,4 +1092,163 @@ html, body{
   background-color: #00eb8f;
   z-index: 1;
   transition: width 200ms ease-in-out;
+}
+
+
+@media (min-width:1024px){
+  .nav{
+    display: flex;
+  }
+}
+@media (max-width: 1024px){
+  .footer-items{
+    flex-direction: column-reverse; 
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+  }
+  .letstalk-btn{
+    flex-direction: column; 
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+  .footer-letstalk{
+    width: 100%;
+  }
+}
+@media (max-width:900px){
+  #img1{
+    left:0;    
+  }
+  
+  .footer-logo{
+    display: none;
+  }
+  #copyright{
+    margin-left: 0;
+  }
+}
+
+@media (max-width:768px){
+  #img1, #img2, #img3{
+    display: none;
+  }
+
+  #section-3{
+    flex-direction: column;
+    gap: 3rem;
+  }
+  #section-3-left{
+    width: 80%;
+  }
+  #section-3-left-left{
+    width: 25%;
+  }
+  #section-3-right{
+    width: 100%;
+  }
+  #section-3-heading{
+    width: 80%;
+  }
+
+  #section-3-paragraph{
+    font-size: clamp(1rem, 1vw, 1.25rem);
+  }
+
+  #section-4-heading{
+    width: 95%;
+    font-size: clamp(1.8rem, 4vw, 4rem);
+  }
+  #brand-logos{
+    width: 95%;
+    padding-inline: 1rem;
+  }
+  #section5-cards{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .section5-individual-card{
+    width: clamp(5rem, 80vw, 40rem);
+    height: clamp(12rem, 40vw, 25rem);
+    
+  }
+  
+  #section5-seemore{
+
+    width: 80%;
+
+    margin-top: 2rem; 
+  }
+
+  
+
+  .slide-review{
+    font-size: clamp(1.5rem, 7vw, 4.5rem);
+  }
+  .reviewer-name, .reviewer-position{
+    font-size: clamp(0.8rem, 2vw, 2rem)
+  }
+
+  #section7{
+    margin-top: 1rem;
+  }
+  .contact-details{
+    width: clamp(18rem, 80vw, 80rem);
+  }
+  #contact-details-para{
+    width: 90%;
+  }
+  .section7-request-callback img{
+    height: clamp(1rem, 8vw, 6rem);
+    width: clamp(1rem, 8vw, 6rem);
+  }
+  .section7-request-callback p{
+    
+    font-size: clamp(0.7rem, 2vw, 3rem);
+  }
+  .section7-request-callback button{
+    font-size: clamp(0.6rem, 2vw, 3rem);
+    height: 2rem;
+  }
+  .footer-learn, .footer-explore, .footer-findus{
+    width: clamp(2rem, 30vw, 10rem);
+  }
+  .footer-learn h2, .footer-explore h2, .footer-findus h2{
+    font-size: clamp(0.9rem, 2vw, 1.125rem);
+  }
+  .footer-learn a, .footer-explore a, .footer-findus p{
+    font-size: clamp(0.6rem, 3vw, 0.8rem);
+  }
+  .footer-partners{
+    display: none;
+  }
+  .footer-partners-horizontal{
+    display: flex;
+  }
+
+  .footer-letstalk{
+    display: none;
+  }
+
+  .footer-bottom-right{
+    padding-block:2rem;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+  .footer-social-links{
+    gap:1rem;
+    margin-left: 6px;
+  }
+  .footer-social-links a i{
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  menu{
+    display: flex;
+  }
 }

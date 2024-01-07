@@ -21,22 +21,43 @@
   </head>
 
   <body>
-    <div class="main">
-      <div class="nav">
-        <div class="nav-left">
-          <h1>this is digital<span id="dot">.</span></h1>
-        </div>
+    <main class="main">
+      <!-- NAVBAR -->
+
+      <nav class="nav">
+        
+        <h1 class="logo">this is digital<span class="dot"></span></h1>
+        
+        
         <div id="navright">
-          <a href="">Services</a><a href="">Work</a><a href="">About</a
-          ><a href="">Culture</a><a href="">Careers</a>
+          <ul class="navitems">
+            <li class="navitem">
+              <a href="">Services</a>
+            </li class="navitem">
+            <li class="navitem">
+              <a href="">Work</a>
+            </li>
+            <li class="navitem">
+              <a href="">About</a>
+            </li>
+            <li class="navitem">
+              <a href="">Culture</a>
+            </li>
+            <li class="navitem">
+              <a href="">Careers</a>
+            </li>
+          </ul>
           <button type="button">
             Contact us <i class="ri-arrow-right-line"></i>
           </button>
         </div>
-      </div>
-
-      <div id="section-1">
-        <div id="middiv">
+      </nav>
+<!-- MOBILE NAV -->
+    <menu>
+      <h1 class="logo">this is digital<span class="dot"></span></h1>
+    </menu>
+      <section id="section-1">
+        <div class="middiv">
           <h1>Digital Performance Solution</h1>
           <p>
             Find out more
@@ -61,16 +82,16 @@
           src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/This-is-digital-LOW-RES-81.jpg?w=1200&h=1200&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1631005177&s=21e4c0bb5ce83f57e69f404637d61265"
           alt=""
         />
-      </div>
+      </section>
 
-      <div id="section-2">
+      <section id="section-2">
         <h2>
-          <span id="section-2-dot"></span>A Digital Performance Solutions Agency
+          <span class="dot"></span>A Digital Performance Solutions Agency
           in Manchester
         </h2>
         <h1>
           We combine network agency expertise, with a highly collaborative
-          relationship. We're a little
+          relationship.  We're a little
           <span id="different">different,</span> This is Digital.
         </h1>
         <div id="about-us">
@@ -79,7 +100,7 @@
             <i class="ri-arrow-right-line"></i>
           </button>
         </div>
-      </div>
+      </section>
 
       <div id="section-3">
         <div id="section-3-left">
@@ -368,58 +389,81 @@
             </button>
           </div>
         </div>
-        <div class="footer-nav">
+        <div class="footer-items">
           <div class="footer-letstalk">
-            <p>Become our <span>partner</span> today</p>
-            <div class="letstalk-btn">
-              <p>Let's talk</p>
-              <button><i class="ri-arrow-right-line"></i></button>
+              <p>Become our <span>partner</span> today</p>
+              <div class="letstalk-btn">
+                <p>Let's talk</p>
+                <button><i class="ri-arrow-right-line"></i></button>
+              </div>
             </div>
-          </div>
-          <div class="footer-learn">
-            <h2>Learn</h2>
-            <a href="">About</a><a href="">Culture</a>
-          </div>
-          <div class="footer-explore">
-            <h2>Explore</h2>
-            <a href="">Work</a><a href="">Services</a><a href="">Careers</a>
-          </div>
-          <div class="footer-findus">
-            <h2>Find us</h2>
-            <p>Conavon Court 12 Blackfriars St Manchester M3 5BQ</p>
-          </div>
-          <div class="footer-partners">
-            <img
-              src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/meta-white.png?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1643207768&s=49f73b7b0969e6e6ef4a62aef6d4955c"
-              alt=""
-            />
-            <img
-              src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/google-white-2023.png?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1677060309&s=a89edbd9b7756df83f9bb15a776715e7"
-              alt=""
-            />
-            <img
-              src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/microsoft-2023-grey.jpg?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1676976146&s=dd540bb021c5e2ffff14a5ee06d7bf32"
-              alt=""
-            />
-          </div>
+
+            <div class="footer-partners-horizontal">
+              <img
+                src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/meta-white.png?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1643207768&s=49f73b7b0969e6e6ef4a62aef6d4955c"
+                alt=""
+              />
+              <img
+                src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/google-white-2023.png?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1677060309&s=a89edbd9b7756df83f9bb15a776715e7"
+                alt=""
+              />
+              <img
+                src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/microsoft-2023-grey.jpg?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1676976146&s=dd540bb021c5e2ffff14a5ee06d7bf32"
+                alt=""
+              />
+            </div>
+
+            <div class="footer-nav">
+          
+              <div class="footer-learn">
+                <h2>Learn</h2>
+                <a href="">About</a><a href="">Culture</a>
+              </div>
+              <div class="footer-explore">
+                <h2>Explore</h2>
+                <a href="">Work</a><a href="">Services</a><a href="">Careers</a>
+              </div>
+              <div class="footer-findus">
+                <h2>Find us</h2>
+                <p>Conavon Court 12 Blackfriars St Manchester M3 5BQ</p>
+              </div>
+              <div class="footer-partners">
+                <img
+                  src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/meta-white.png?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1643207768&s=49f73b7b0969e6e6ef4a62aef6d4955c"
+                  alt=""
+                />
+                <img
+                  src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/google-white-2023.png?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1677060309&s=a89edbd9b7756df83f9bb15a776715e7"
+                  alt=""
+                />
+                <img
+                  src="https://optimise2.assets-servd.host/squalid-loris/production/uploads/images/logos/footer/edited/microsoft-2023-grey.jpg?w=400&q=80&fm=webp&fit=crop&fp-x=0.5&fp-y=0.5&dm=1676976146&s=dd540bb021c5e2ffff14a5ee06d7bf32"
+                  alt=""
+                />
+              </div>
+            </div>
+           
         </div>
+       
         <div class="license-info">
           <p class="footer-logo">this is digital<span>.</span></p>
-          <p class="footer-bottom-text" id="copyright">
-            © 2023 This is Digital - Digital Performance Solutions. All rights
-            reserved.
-          </p>
-          <a href="">Privacy Policy</a>
-          <p class="footer-bottom-text">
-            Web Design by <a href=""> M Bilal</a>
-          </p>
-          <div class="footer-social-links">
-            <a href=""><i class="ri-instagram-fill"></i></a
-            ><a href=""><i class="ri-linkedin-box-fill"></i></a>
+          <div class="footer-bottom-right">
+            <p class="footer-bottom-text" id="copyright">
+              © 2023 This is Digital - Digital Performance Solutions. All rights
+              reserved.
+            </p>
+            <a href="">Privacy Policy</a>
+            <p class="footer-bottom-text">
+              Web Design by <a href=""> M Bilal</a>
+            </p>
+            <div class="footer-social-links">
+              <a href=""><i class="ri-instagram-fill"></i></a
+              ><a href=""><i class="ri-linkedin-box-fill"></i></a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

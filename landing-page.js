@@ -1,5 +1,9 @@
+
+
+// Rendering NavItems
+
 // Section 1 Animation
-gsap.from("#middiv",{
+gsap.from(".middiv",{
   opacity:0,
   duration: 0.5,
    
@@ -61,6 +65,7 @@ const footerLearn = document.querySelector('.footer-learn')
 const footerExplore = document.querySelector('.footer-explore')
 const footerFindus = document.querySelector('.footer-findus')
 const footerPartners = document.querySelector('.footer-partners')
+const footerPartnersHorizontal = document.querySelector('.footer-partners-horizontal')
 let prevScrollPosition = window.scrollY;
 
 window.addEventListener("scroll", () => {
@@ -125,7 +130,7 @@ window.addEventListener("scroll", () => {
   //Section 7 Animations
 
   if(currScrollPosition > 4200){
-    sectionSevenCard.style.transform = 'translateY(-12rem)'
+    sectionSevenCard.style.transform = 'translateY(-50%)'
   }
   if (currScrollPosition >4600){
       animateFooterNav(elements);
@@ -134,7 +139,7 @@ window.addEventListener("scroll", () => {
 });
 
 //Footer Nav Animations
-const elements = [footerLetsTalk, footerLearn, footerExplore, footerFindus, footerPartners]
+const elements = [footerLetsTalk, footerLearn, footerExplore, footerFindus, footerPartners, footerPartnersHorizontal]
 function animateFooterNav(elements) {
   for (let index = 0; index < elements.length; index++) {
     // Use an IIFE (Immediately Invoked Function Expression) to capture the current index.
