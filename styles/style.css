@@ -865,7 +865,7 @@ menu{
 .footer-items{
   width:100%;
   display: flex;
-  padding-inline: 5rem;
+  padding-inline: 3rem;
 }
 .footer-nav{
   display: flex;
@@ -1213,7 +1213,7 @@ menu{
     height: 2rem;
   }
   .footer-learn, .footer-explore, .footer-findus{
-    width: clamp(2rem, 30vw, 10rem);
+    width: clamp(2rem, 25vw, 8rem);
   }
   .footer-learn h2, .footer-explore h2, .footer-findus h2{
     font-size: clamp(0.9rem, 2vw, 1.125rem);
@@ -1226,6 +1226,10 @@ menu{
   }
   .footer-partners-horizontal{
     display: flex;
+    gap: 1rem;
+  }
+  .footer-items{
+    padding-inline: 2rem;
   }
 
   .footer-letstalk{
@@ -1239,11 +1243,11 @@ menu{
     gap: 0.5rem;
   }
   .footer-social-links{
-    gap:1rem;
-    margin-left: 6px;
+    gap:0.5rem;
+
   }
   .footer-social-links a i{
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
 }
 
