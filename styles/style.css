@@ -863,9 +863,10 @@ menu{
   width:100%;
 }
 .footer-items{
-  width:100%;
+  width: 90%;
+  justify-content: center;
   display: flex;
-  padding-inline: 3rem;
+  
 }
 .footer-nav{
   display: flex;
@@ -875,7 +876,7 @@ menu{
 .footer-letstalk{
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 25%;
   opacity: 0;
   transform: translateY(4rem);
   transition: opacity 500ms ease-in-out, transform 650ms ease-in-out;
@@ -1004,7 +1005,7 @@ menu{
 
 .license-info{
   display: flex;
-  
+  padding-block: 1rem;
   margin-top: 4rem;
   border-top: 1px solid rgb(146, 146, 146);
   justify-content: space-between;
@@ -1104,6 +1105,7 @@ menu{
   .footer-items{
     flex-direction: column-reverse; 
     align-items: center;
+    justify-content: center;
     text-align: center;
     gap: 3rem;
   }
@@ -1160,6 +1162,18 @@ menu{
     width: 95%;
     font-size: clamp(1.8rem, 4vw, 4rem);
   }
+
+  #learn-more {
+    width: 100%;
+     
+    font-size: clamp(0.7rem, 2vw, 3rem);
+  }
+  #learn-more button{
+    font-size: clamp(0.6rem, 2vw, 3rem);
+    height: 2rem;
+    width: 7rem;
+  }
+
   #brand-logos{
     width: 95%;
     padding-inline: 1rem;
@@ -1177,12 +1191,15 @@ menu{
   
   #section5-seemore{
 
-    width: 80%;
-
+    width: 100%;
     margin-top: 2rem; 
+    font-size: clamp(0.7rem, 2vw, 3rem);
   }
+  #section5-seemore button{
+    font-size: clamp(0.6rem, 2vw, 3rem);
+    height: 2rem;
 
-  
+  }
 
   .slide-review{
     font-size: clamp(1.5rem, 7vw, 4.5rem);
@@ -1227,9 +1244,11 @@ menu{
   .footer-partners-horizontal{
     display: flex;
     gap: 1rem;
+    width: 100%;
   }
   .footer-items{
     padding-inline: 2rem;
+    text-align: start;
   }
 
   .footer-letstalk{
